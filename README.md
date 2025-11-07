@@ -1,6 +1,6 @@
 # Verse by Verse Ministry - Web Scraper and Chatbot
 
-A Python-based project to scrape Bible study materials from [versebyverseministry.org](http://versebyverseministry.org/) and provide a chatbot interface to answer Bible-related questions using the collected content.
+A Python-based project to scrape Bible study materials from [versebyverseministry.org](https://versebyverseministry.org/) and provide a chatbot interface to answer Bible-related questions using the collected content.
 
 ## Overview
 
@@ -41,7 +41,7 @@ python main.py scrape
 ```
 
 Optional arguments:
-- `--url`: Base URL to scrape (default: http://versebyverseministry.org/)
+- `--url`: Base URL to scrape (default: https://versebyverseministry.org/)
 - `--output`: Output directory (default: scraped_content)
 - `--max-pages`: Maximum pages to scrape (default: 100)
 

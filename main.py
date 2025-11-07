@@ -60,8 +60,8 @@ Examples:
     scraper_parser = subparsers.add_parser('scrape', help='Run the web scraper')
     scraper_parser.add_argument(
         '--url',
-        default='http://versebyverseministry.org/',
-        help='Base URL to scrape (default: http://versebyverseministry.org/)'
+        default='https://versebyverseministry.org/',
+        help='Base URL to scrape (default: https://versebyverseministry.org/)'
     )
     scraper_parser.add_argument(
         '--output',

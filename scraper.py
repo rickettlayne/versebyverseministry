@@ -17,13 +17,13 @@ from bs4 import BeautifulSoup
 class VBVMScraper:
     """Scraper for Verse by Verse Ministry website."""
     
-    def __init__(self, base_url: str = "http://versebyverseministry.org/", 
+    def __init__(self, base_url: str = "https://versebyverseministry.org/", 
                  output_dir: str = "scraped_content"):
         """
         Initialize the scraper.
         
         Args:
-            base_url: The base URL of the website to scrape
+            base_url: The base URL of the website to scrape (use HTTPS for secure connection)
             output_dir: Directory to store scraped content
         """
         self.base_url = base_url
