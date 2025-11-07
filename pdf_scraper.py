@@ -4,10 +4,11 @@ Web scraper to extract PDF links and download PDFs from versebyverseministry.org
 
 import os
 import time
+import hashlib
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin, urlparse
-from typing import List, Set
+from typing import List, Set, Optional
 import config
 
 
@@ -84,7 +85,7 @@ class PDFScraper:
         url_domain = urlparse(url).netloc
         return base_domain == url_domain
     
-    def download_pdf(self, pdf_url: str) -> str:
+    def download_pdf(self, pdf_url: str) -> Optional[str]:
         """
         Download a single PDF file
         
@@ -92,11 +93,13 @@ class PDFScraper:
             pdf_url: URL of the PDF to download
             
         Returns:
-            Path to the downloaded file
+            Path to the downloaded file, or None if download fails
         """
         filename = os.path.basename(urlparse(pdf_url).path)
         if not filename:
-            filename = f"document_{hash(pdf_url)}.pdf"
+            # Use hashlib for deterministic filename generation
+            url_hash = hashlib.md5(pdf_url.encode()).hexdigest()
+            filename = f"document_{url_hash}.pdf"
         
         filepath = os.path.join(self.pdf_save_dir, filename)
         

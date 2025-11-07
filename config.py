@@ -20,7 +20,7 @@ COLLECTION_NAME = "vbvm_pdfs"
 # OpenAI settings (can be overridden by environment variables)
 OPENAI_API_KEY = None  # Set in .env file or environment
 MODEL_NAME = "gpt-3.5-turbo"
-EMBEDDING_MODEL = "text-embedding-ada-002"
+EMBEDDING_MODEL = "text-embedding-3-small"  # Updated to newer model
 TEMPERATURE = 0.7
 MAX_TOKENS = 500
 

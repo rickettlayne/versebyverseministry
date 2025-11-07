@@ -7,12 +7,26 @@ from typing import List, Optional
 import chromadb
 from chromadb.config import Settings
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain_community.vectorstores import Chroma
-from langchain_community.embeddings import OpenAIEmbeddings
-from langchain_community.chat_models import ChatOpenAI
 from langchain.chains import RetrievalQA
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
+
+# Import with fallback for different LangChain versions
+try:
+    from langchain_openai import OpenAIEmbeddings, ChatOpenAI
+except ImportError:
+    try:
+        from langchain_community.embeddings import OpenAIEmbeddings
+        from langchain_community.chat_models import ChatOpenAI
+    except ImportError:
+        from langchain.embeddings import OpenAIEmbeddings
+        from langchain.chat_models import ChatOpenAI
+
+try:
+    from langchain_community.vectorstores import Chroma
+except ImportError:
+    from langchain.vectorstores import Chroma
+
 import config
 from pdf_processor import PDFProcessor
 
