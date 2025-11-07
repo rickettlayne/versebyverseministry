@@ -148,5 +148,5 @@ Created for scraping and analyzing Bible study materials from Verse by Verse Min
 
 ## Acknowledgments
 
-- Content source: [Verse by Verse Ministry](http://versebyverseministry.org/)
+- Content source: [Verse by Verse Ministry](https://versebyverseministry.org/)
 - Bible teachings by Stephen Armstrong
