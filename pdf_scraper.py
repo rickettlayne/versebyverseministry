@@ -97,8 +97,8 @@ class PDFScraper:
         """
         filename = os.path.basename(urlparse(pdf_url).path)
         if not filename:
-            # Use hashlib for deterministic filename generation
-            url_hash = hashlib.md5(pdf_url.encode()).hexdigest()
+            # Use SHA-256 for deterministic, non-security filename generation
+            url_hash = hashlib.sha256(pdf_url.encode()).hexdigest()[:16]
             filename = f"document_{url_hash}.pdf"
         
         filepath = os.path.join(self.pdf_save_dir, filename)

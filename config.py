@@ -13,6 +13,7 @@ USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
 
 # Chatbot settings
 VECTOR_DB_DIR = "chroma_db"
+VECTOR_DB_FILE = "chroma.sqlite3"
 CHUNK_SIZE = 1000
 CHUNK_OVERLAP = 200
 COLLECTION_NAME = "vbvm_pdfs"

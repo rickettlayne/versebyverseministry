@@ -50,6 +50,10 @@ class VBVMChatbot:
         if not self.api_key:
             raise ValueError("OpenAI API key is required. Set OPENAI_API_KEY in .env file or pass as parameter")
         
+        # Validate API key format
+        if not self.api_key.startswith('sk-'):
+            raise ValueError("Invalid OpenAI API key format. Key should start with 'sk-'")
+        
         os.environ['OPENAI_API_KEY'] = self.api_key
         
         # Initialize components
@@ -68,7 +72,7 @@ class VBVMChatbot:
             reindex: If True, re-index all documents even if database exists
         """
         # Check if vector database already exists
-        db_path = os.path.join(config.VECTOR_DB_DIR, "chroma.sqlite3")
+        db_path = os.path.join(config.VECTOR_DB_DIR, config.VECTOR_DB_FILE)
         
         if os.path.exists(db_path) and not reindex:
             print("Loading existing vector database...")
