@@ -1,7 +1,14 @@
+
+from dotenv import load_dotenv
+load_dotenv()
+
 import chromadb
 from openai import OpenAI
 
 from ingest.config import CHROMA_PATH, COLLECTION_NAME, TOP_K
+
+
+
 
 client = OpenAI(api_key="YOUR_OPENAI_KEY")  # env variable in real code
 chroma = chromadb.PersistentClient(path=CHROMA_PATH)

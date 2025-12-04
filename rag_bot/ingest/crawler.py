@@ -15,14 +15,18 @@ def get_study_pages() -> list[str]:
     soup = BeautifulSoup(resp.text, "html.parser")
 
     study_urls = []
+
+    # Only capture bible study subpages
     for a in soup.find_all("a", href=True):
         href = a["href"]
-        # study URLs contain "/study/" or "/books/" patterns
-        if "study" in href or "book" in href:
+
+        # Must be inside the /bible-studies/ directory
+        if "/bible-studies/" in href:
             full = urljoin(BASE_URL, href)
             study_urls.append(full)
 
     return sorted(set(study_urls))
+
 
 def extract_pdfs_from_page(url: str) -> list[str]:
     resp = requests.get(url, timeout=30)

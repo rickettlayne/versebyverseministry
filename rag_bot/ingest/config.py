@@ -1,4 +1,5 @@
-BASE_URL = "https://example.com/resources"  # change this
+BASE_URL = "https://versebyverseministry.org/bible-studies"
+
 
 # RAG config
 CHUNK_SIZE = 800
