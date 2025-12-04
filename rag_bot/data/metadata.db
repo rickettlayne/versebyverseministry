@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS documents (
+    id INTEGER PRIMARY KEY,
+    url TEXT UNIQUE,
+    checksum TEXT,
+    last_processed_at TEXT
+);
+
+CREATE TABLE IF NOT EXISTS ingest_log (
+    id INTEGER PRIMARY KEY,
+    url TEXT,
+    event TEXT,
+    timestamp TEXT
+);

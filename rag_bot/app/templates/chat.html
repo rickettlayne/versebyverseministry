@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RAG Chatbot</title>
+    <meta charset="utf8">
+  </head>
+  <body>
+    <h1>RAG Chatbot</h1>
+    <form method="post" action="/chat">
+      <textarea name="user_input" rows="3" cols="80" placeholder="Ask a question"></textarea>
+      <br>
+      <button type="submit">Send</button>
+    </form>
+
+    <hr>
+
+    {% for msg in history %}
+      <p><strong>{{ "You" if msg.sender == "user" else "Bot" }}:</strong> {{ msg.text }}</p>
+    {% endfor %}
+  </body>
+</html>

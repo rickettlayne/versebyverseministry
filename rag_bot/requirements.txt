@@ -1,0 +1,29 @@
+# HTTP requests used by crawler
+requests
+
+# HTML parsing for link extraction
+beautifulsoup4
+
+# PDF text extraction
+pypdf
+
+# Vector database for embeddings
+chromadb
+
+# OpenAI client for embeddings and chat
+openai
+
+# Web framework for the chatbot API
+fastapi
+
+# ASGI server for running FastAPI locally
+uvicorn
+
+# Template engine for the web chat interface
+jinja2
+
+# Used for loading environment variables such as API keys
+python-dotenv
+
+# Optional production server for deployment platforms
+gunicorn
